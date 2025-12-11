@@ -1,4 +1,7 @@
-import CadastroForm from './CadastroForm';
+import React from 'react';
+import CadastroForm from './CadastroForm'; 
+import IForumBg from '../assets/iforum_logo.png'; 
+import './CadastroAluno.css'; 
 
 const COORDENADOR_FIELDS = [
     { name: 'nome', label: 'Nome Completo', required: true },
@@ -9,18 +12,27 @@ const COORDENADOR_FIELDS = [
     { name: 'senha', label: 'Senha Inicial', type: 'password', required: true },
 ];
 
-function CadastroCoordenador() {
+const CadastroCoordenador = () => {
+    
     const handleCoordenadorSubmit = (data) => {
         console.log('Dados do Coordenador Prontos para o Backend:', data);
     };
+
+    const screenStyle = {
+        backgroundImage: `url(${IForumBg})`
+    };
     
     return (
-        <CadastroForm 
-            title="Cadastro de Coordenador"
-            fields={COORDENADOR_FIELDS}
-            onSubmit={handleCoordenadorSubmit}
-        />
+        <div className="full-screen-wrapper" style={screenStyle}>
+            <div className="overlay-content">
+                <CadastroForm 
+                    title="Cadastro de Coordenador"
+                    fields={COORDENADOR_FIELDS}
+                    onSubmit={handleCoordenadorSubmit}
+                />
+            </div>
+        </div>
     );
-}
+};
 
 export default CadastroCoordenador;
