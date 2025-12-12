@@ -24,7 +24,7 @@ const MenuForm = () => {
           <ul>
             {}
             <li>
-              <a href="#" className="nav-link">🏠 Início (Dashboard)</a>
+              <a href="#" className="nav-link">🏠 Início</a>
             </li>
 
             {}
@@ -71,3 +71,4 @@ const MenuForm = () => {
 };
 
 export default MenuForm;
+
